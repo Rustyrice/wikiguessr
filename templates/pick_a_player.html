@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+
+    <style>
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left 1100px;
+      }
+    </style>
+
+    <div class="header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/New-Bouncywikilogo.gif"
+        width="200"
+        height="200"
+        ;
+      />
+      <h1 class="title">
+        The <br />
+        WikiGuessr <br />
+        Game
+      </h1>
+    </div>
+    <div style="width: 30%" ; class="button-holder">
+      <div class="avatar-menu">
+        <h2 style="color: white">Choose Your Avatar:</h2>
+        <div class="avatar">
+          <img
+            src="https://jdsupra-html-images.s3-us-west-1.amazonaws.com/db4b8dbc-814c-4fb6-9e42-bfd5393fdace-doge-e1633357157847.png"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://www.vhv.rs/dpng/d/342-3424684_handsome-squidward-spongebob-meme-freetoedit-transparent-handsome-squidward.png"
+            alt="Avatar 2"
+          />
+          <button onclick="selectAvatar('avatar2.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://www.pngfind.com/pngs/m/693-6930607_transparent-confused-people-clipart-think-meme-hd-png.png"
+            alt="Avatar 3"
+          />
+          <button onclick="selectAvatar('avatar3.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/abaf6f93-0b17-4237-b8f3-fd7c88af1947/dcwgar0-ab811e86-765c-4ba5-a302-6424c26f4c1c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiYWY2ZjkzLTBiMTctNDIzNy1iOGYzLWZkN2M4OGFmMTk0N1wvZGN3Z2FyMC1hYjgxMWU4Ni03NjVjLTRiYTUtYTMwMi02NDI0YzI2ZjRjMWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.hOIAZAwyAJPO0bmcwh6LAdh2posPYK_oK4kLS0A0uec"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://cdn.myshoptet.com/usr/www.mememerch.cz/user/shop/big/1086_samolepka-success-kid.jpg?63480414"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img src="https://i.redd.it/1o8zqjm9bqc81.png" alt="Avatar 1" />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://i.kym-cdn.com/entries/icons/mobile/000/020/147/drake.jpg"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://i.kym-cdn.com/photos/images/original/001/708/961/9e1.png"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://e7.pngegg.com/pngimages/358/421/png-clipart-pepe-the-frog-desktop-frog-leaf-animals.png"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://banner2.cleanpng.com/20180318/ivq/kisspng-nyan-cat-clip-art-nyan-cat-png-transparent-images-5aaf291b427773.9856456815214287632723.jpg"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://www.vhv.rs/dpng/d/439-4395087_meme-cringe-harold-dank-freetoedit-hide-the-pain.png"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+        <div class="avatar">
+          <img
+            src="https://p7.hiclipart.com/preview/255/282/359/whiskers-meme-japanese-bobtail-meme.jpg"
+            alt="Avatar 1"
+          />
+          <button onclick="selectAvatar('avatar1.png')">Select</button>
+        </div>
+      </div>
+    </div>
+
+    <title>WikiGuessr</title>
+  </head>
+  <body>
+    <button
+      style="margin-top: 10px"
+      id="next-button"
+      class="name-buttons"
+      type="button"
+      onclick="window.location.href = 'category.html';"
+    >
+      Next
+    </button>
+  </body>
+</html>

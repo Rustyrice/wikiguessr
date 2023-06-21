@@ -1,0 +1,17 @@
+<html>
+<body>
+    <h1>Guess the Wikipedia article!</h1>
+    <h2> You have {{ points }} points and {{ guesses }} guesses remaining</h2>
+    <h2>{{ title }}</h2>
+    {% for sentence in givenSentences %}
+        <p>{{ sentence }}</p>
+    {% endfor %}
+    <form action="/game" method="POST">
+        <label for="answer">Enter your answer:</label>
+        <input type="text" id="answer" name="answer" required>
+        <button type="submit">Guess</button>
+    </form>
+    <p>{{ result }}</p>
+</body>
+</html>
+

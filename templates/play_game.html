@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>WikiGuessr</title>
+    <style>
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png");
+        background-repeat: no-repeat;
+        background-size: 900px;
+        background-position: top left 1100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="header"
+      style="
+        display: flex;
+        align-items: center;
+        width: 1600px;
+        justify-content: space-between;
+        padding: 20px;
+      "
+    >
+      <div class="button-holder">
+        <h3 id="player-name" style="color: white"></h3>
+        <div style="display: inline-block">
+          <i class="fa fa-heart" style="color: red"></i>
+          <i class="fa fa-heart" style="color: red"></i>
+          <i class="fa fa-heart" style="color: red"></i>
+          <i class="fa fa-heart" style="color: red"></i>
+          <i class="fa fa-heart" style="color: red"></i>
+        </div>
+      </div>
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/New-Bouncywikilogo.gif"
+        width="200"
+        height="200"
+        ;
+      />
+      <h1 class="title">
+        The <br />
+        WikipediA <br />
+        Game
+      </h1>
+
+      <div style="right: 20px" class="button-holder">
+        <p style="color: white">Points</p>
+      </div>
+    </div>
+
+    <div
+      style="width: 70%; position: relative; border-radius: 80px"
+      class="button-holder"
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h3 style="color: white; font-weight: normal; font-size: 20px">
+          Guess the title of the article:
+        </h3>
+      </div>
+      <button
+        id="next-button"
+        style="
+          border-radius: 20px;
+          font-size: 12px;
+          width: 10%;
+          margin-left: auto;
+        "
+        type="button"
+        class="btn btn-primary"
+      >
+        Next Hint
+      </button>
+      <div style="width: 80%; word-wrap: break-word">
+        <p style="font-size: 14px; color: white; align-items: left">
+          First sentence:
+        </p>
+        <p style="font-size: 14px; color: white">skjdfhksjdhfkjsdhfkjh</p>
+      </div>
+      <form role="form" method="post">
+        <div
+          class="form-group"
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            margin-bottom: -50px;
+          "
+        >
+          <input
+            style="border-radius: 20px; background-color: #ffad21; width: 800px"
+            type="search"
+            class="form-control center-block"
+            placeholder="Enter your guess here"
+          />
+          <input
+            style="
+              font-size: 15px;
+              margin-top: 5px;
+              margin-left: 40px;
+              width: 80px;
+            "
+            type="button"
+            class="btn btn-primary center-block"
+            value="Submit"
+          />
+        </div>
+        <button
+          style="
+            border-radius: 20px;
+            font-size: 12px;
+            width: 5%;
+            position: absolute;
+            left: 50px;
+          "
+          type="button"
+          class="btn btn-primary center-block"
+          value="Submit"
+          id="quit-button"
+        >
+          Quit
+        </button>
+      </form>
+    </div>
+
+    <div id="result"></div>
+
+    <script type="text/javascript" src="myscript.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script>
+      // Get player name from localStorage
+      const playerName = localStorage.getItem("playerName");
+
+      // Display player name in HTML document
+      const playerNameElement = document.getElementById("player-name");
+      playerNameElement.textContent = playerName;
+
+      const backButton = document.getElementById("quit-button");
+      backButton.addEventListener("click", () => {
+        const url = "index.html";
+        window.location.href = url;
+      });
+
+      const nextButton = document.getElementById("next-button");
+      nextButton.addEventListener("click", () => {
+        const url = "category.html";
+        window.location.href = url;
+      });
+    </script>
+  </body>
+</html>

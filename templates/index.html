@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheet.css') }}"
+    />
+    <title>WikiGuessr</title>
+
+    <style>
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left 1100px;
+      }
+
+      .btn {
+        background-color: #ffad21;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+      }
+
+      .btn:hover {
+        background-color: rgb(255, 255, 255);
+        color: #ffad21;
+        /* add additional CSS styles to display visual assets, e.g. */
+        border: 2px solid black;
+        box-shadow: 3px 3px 3px grey;
+      }
+    </style>
+  </head>
+  <body>
+    {% if debug %}
+    <div style="background-color: yellow; padding: 10px">
+      DEBUG MODE ENABLED
+    </div>
+    {% endif %}
+    <div
+      style="
+        font-size: 10px;
+        color: #cccccc;
+        line-break: anywhere;
+        word-break: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+          Garuda, Verdana, Tahoma, sans-serif;
+        font-weight: 100;
+      "
+    ></div>
+
+    <div class="header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/New-Bouncywikilogo.gif"
+        width="200"
+        height="200"
+        ;
+      />
+      <h1 class="title">
+        The <br />
+        WikiGuessr <br />
+        Game
+      </h1>
+    </div>
+
+    <div style="width: 40%" class="button-holder">
+      <h1 style="color: white">Welcome to the WikiGuessr Game!</h1>
+      <h3 style="color: white">The best knowledge game you will ever play!</h3>
+      <h4 style="color: white">Rules:</h4>
+      <h4
+        style="
+          color: white;
+          text-align: center;
+          width: 80%;
+          margin-bottom: 40px;
+          margin-top: 0px;
+        "
+      >
+        You will be presented with a sentence from a random wikipedia page based
+        on the one of the five categories you chose. You will have to guess the
+        title of the page. If you can’t do it with the first try, a hint will be
+        provided with you in the form of another sentence. You have 5 hints,
+        then the game is over and you lose a heart. You have 5 hearts. The more
+        hints you use per game, the less points you get. The player with the
+        most points wins
+      </h4>
+      <form>
+        <input
+          style="width: 100%; text-align: center; height: 40px"
+          type="button"
+          class="btn"
+          value="Start Game"
+          id="start-button"
+        />
+      </form>
+
+      <a href="{{ url_for('enter_name') }}"> Play game!</a>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="{{ url_for('static', filename='js/myscript.js') }}"></script>
+    <!-- <script type="text/javascript" src="api.js"></script> -->
+    <script>
+      const startButton = document.getElementById("start-button");
+      startButton.addEventListener("click", () => {
+        window.location.href = "{{ url_for('enter_name') }}";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+
+    <title>WikiGuessr</title>
+
+    <style>
+      body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/61/Wikipedia-logo-transparent.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left 1100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/New-Bouncywikilogo.gif"
+        width="200"
+        height="200"
+        ;
+      />
+      <h1 class="title">
+        The <br />
+        WikipediA <br />
+        Game
+      </h1>
+    </div>
+
+    <div class="button-holder">
+      <h3 style="color: #ffad21">Welcome <span id="player-name"></span>!</h3>
+      <h3 style="color: #ffad21">Choose your category:</h3>
+      <input
+        type="button"
+        class="btn btn-primary center-block"
+        value="Countries"
+        data-category="Countries"
+        onclick="window.location.href = 'home.html';"
+      />
+      <input
+        type="button"
+        class="btn btn-primary center-block"
+        value="Celebrities"
+        data-category="Celebrities"
+      />
+      <input
+        type="button"
+        class="btn btn-primary center-block"
+        value="Movies"
+        data-category="Movies"
+      />
+      <input
+        type="button"
+        class="btn btn-primary center-block"
+        value="Books"
+        data-category="Books"
+      />
+      <input
+        type="button"
+        class="btn btn-primary center-block"
+        value="Sports"
+        data-category="Sports"
+      />
+      <input
+        style="font-size: 12px; height: 25px; margin-top: 20px; width: 70%"
+        type="button"
+        class="btn btn-primary center-block"
+        value="Back"
+        id="back-button"
+        onclick="window.location.href = 'pick_a_player.html';"
+      />
+
+      <a href="{{ url_for('enter_name') }}"> Back!</a>
+      <a href = "{{ url_for('game') }}"> Countries</a> 
+    </div>
+
+    <div id="result"></div>
+
+    <script type="text/javascript" src="myscript.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script>
+      const playerNameElement = document.getElementById("player-name");
+      const storedPlayerName = localStorage.getItem("playerName");
+      if (storedPlayerName) {
+        playerNameElement.textContent = storedPlayerName;
+      }
+      // const input = document.getElementById("playerName");
+      // const usernameDisplay = document.getElementById("playerName-display");
+
+      // // // Update the display when the page loads
+      // // window.addEventListener("load", function () {
+      // //   const storedUsername = localStorage.getItem("username");
+      // //   if (storedUsername) {
+      // //     usernameDisplay.textContent = storedUsername;
+      // //   }
+      // // });
+
+      // // // Update the display when the user input changes
+      // // input.addEventListener("input", function () {
+      // //   const username = input.value;
+      // //   localStorage.setItem("username", username);
+      // //   usernameDisplay.textContent = username;
+      // });
+
+      const nextButton = document.getElementById("next-button");
+      nextButton.addEventListener("click", () => {
+        const url = "play_game.html";
+        window.location.href = url;
+      });
+    </script>
+  </body>
+</html>
